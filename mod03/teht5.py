@@ -7,5 +7,6 @@ luoti = float(luoti_str)
 naula = leiviskä * 20
 luoti = naula * 32
 gramma = luoti * 13.3
-kilogramma = gramma
-print("Massa nykymittojen mukaan: "),print(kilogramma," kilogrammaa"),print(gramma," grammaa"): {kilogramma:10.2},{gramma:10.2}
+kilogramma = int(gramma // 1000)
+gramma = round(gramma % 1000, 2)
+print("Massa nykymittojen mukaan: "),print(kilogramma," kilogrammaa"),print(gramma," grammaa")
