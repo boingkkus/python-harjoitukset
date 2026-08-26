@@ -1,2 +1,2 @@
 nimi = input("Mikä on nimesi:")
-print("Hei, " + nimi + ".")
+print("Hei, " + nimi + "!")
