@@ -1,3 +1,11 @@
+with open("intro.txt") as tiedosto:
+    data = tiedosto.read()
+    print(data)
+
+with open("ohjeet.txt") as tiedosto:
+    data = tiedosto.read()
+    print(data)
+
 class Pelaaja():
     def __init__(self, nimi, ikä, tavarat, sijainti):
         self.nimi = nimi
