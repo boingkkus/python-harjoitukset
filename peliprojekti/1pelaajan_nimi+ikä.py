@@ -1,3 +1,31 @@
+class Pelaaja():
+    def __init__(self, nimi, ikä, tavarat, sijainti):
+        self.nimi = nimi
+        self.ikä = ikä
+        self.tavarat = tavarat
+        self.sijainti = sijainti
+
+    def liiku(self, sijainti):
+        for i in range(sijainti):
+            print(self.nimi, "liikkuu huoneeseen: ", self.sijainti)
+        return
+
+    def kerää_esine(self, tavarat):
+        for t in range(tavarat):
+            print(self.nimi, "kerää tavaran: ", self.tavara)
+        return
+
+class Huone():
+    def __init__(self, nimi, esine):
+        self.nimi = nimi
+        self.esine = esine
+
+class Esine():
+    def __init__(self, nimi, paino):
+        self.nimi = nimi
+        self.paino = paino
+
+
 nimi = input("Mikä on nimesi?: ")
 ikä = int(input("Mikä on ikäsi?: "))
 
