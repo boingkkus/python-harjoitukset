@@ -1,7 +1,8 @@
-Pupen päivä
+Pupun Matka
 Tiia Kanerva
 
-En saanut lisättyä käyttäjältä kysyttyä asiaa listamuuttujaan. 
-En osannut lisätä funktiota sujuvasti koodiin.
+Pelin ideana on etsiä ystävä nimeltä Myy. 
 
-en osannut tallentaa pelin tilannetta erilliseen tekstitiedostoon
+
+Pelissä on otettu kestävän kehityksen tavoitteita huomioon papanoiden lattialta keräämisessä (sanitaatio), sekä syömällä heinää (ei nälkää). 
+
