@@ -16,11 +16,15 @@ class Huone():
         eteinen = Huone("Eteinen")
 
 class Pelaaja():
-    def __init__(self, nimi, ikä, sijainti ='makuuhuone'):
+    def __init__(self, nimi, ikä, esineet = 'papana', sijainti ='makuuhuone'):
         self.nimi = nimi
         self.ikä = ikä
-        self.esineet = ['papana']
+        self.esineet = esineet
         self.sijainti = sijainti
+        return
+
+    def get_esine(self):
+        return self.esineet
 
     def luettele_esine(self):
         return self.esineet
@@ -44,7 +48,7 @@ class Esine():
 def __str__(self):
     return (f"{self.nimi}")
 
-
+#alkutekstien printtaukset
 with open("peliprojekti/intro.txt") as tiedosto:
     data = tiedosto.read()
     print(data)
@@ -60,7 +64,6 @@ with open("peliprojekti/ohjeet.txt") as tiedosto:
 #with open("peliprojekti/save.txt", "a") as tiedosto:
 #    tiedosto.write("Pelaaja pääsi tasolle 3.\n")
 #    tiedosto.write("Pelaaja pääsi tasolle 4.\n")
-    #pitääks tännekki laittaa niitä vitun olioita tai funktioita idfk
     #en tiiä tarviinko näitä ees lowkey ?
 
 #with open("peliprojekti/save.txt", "r") as tiedosto:
@@ -69,7 +72,7 @@ with open("peliprojekti/ohjeet.txt") as tiedosto:
 
 
 
-
+#pelaajan tallennus jsoniin
 def tallenna(Pelaaja):
     import json
 
@@ -86,11 +89,11 @@ def tallenna(Pelaaja):
     print(f"Pelaaja: {data_luettu['pelaaja']}, taso: {data_luettu['ikä']}, esineet: {data_luettu['esineet']}, sijainti: {data_luettu['sijainti']}")
 
 
-
+#pelaajan nimi ja ikä:
 nimi = input("Mikä on nimesi?: ")
 ikä = int(input("Mikä on ikäsi?: "))
 
-
+#pääsilmukka, pelin päärakenne
 if ikä >= 12 :
     print("Hei,", nimi, ikä,"v." )
     print("Tervetuloa pelaamaan peliä 'Pupun päivä'!" )
@@ -203,7 +206,9 @@ if ikä >= 12 :
                                         "Vastaus oli aina Myy. Vastaus tulee aina olemaan Myy.'\n")
 
                                         print("Pääsit pelin loppuun! Löysit Myyn, eli elämän tarkoituksen, ja valaistuit! Onnittelut. ")
-                                        #if Pelaaja.esineet == ["papana", "papana", "papana"]:
+                                       
+                                        #if 'papana' in Pelaaja: 
+                                        #    Pelaaja.get_esine()
                                         #    print("Löysit ja keräsit myös kaikki papanat matkallasi Myyn luokse! Läpäisit pelin! Onnittelut!")
                                         quit()
 
@@ -213,14 +218,14 @@ if ikä >= 12 :
                         komento3 = input("Anna komento; katso ympärillesi, katso pussukkaan, mene syvemmälle, tai lopeta: ")
 
                 if komento2 == "makuuhuoneeseen":
-                    #se vitun sijaintikoodi
+                    #se sijaintikoodi
                     print("'Makuuhuone vaikutti turvalliselta paikalta. Ehkä Myy palaa itse takaisin sinne...'")
-                    print("Miten kehtaat jättää Myyn etsinnän kesken. Myy on ainoa tärkeä asia tässä maailmassa. Kuole saasta.")
+                    print("Miten kehtaat jättää Myyn etsinnän kesken. Myy on ainoa tärkeä asia tässä maailmassa.")
                     print("Sait salamasta iskun suoraan päähän. Et voi todistaa Myyn tehneen tätä.")
                     quit()
 
                 if komento2 == "eteiseen":
-                    #tähän se vitun sijainti koodi
+                    #tähän se sijainti koodi
                     print("'En ole koskaan käynyt täällä ennen... eikä tänäänkään ole se päivä. Kynnys on ihan liian hurja... eihän täällä edes näy papanoita...'\n")
                     
                     mennäänkö_eteiseen = input("Yritetäänkö eteiseen menoa uudestaan? y/n: ")
