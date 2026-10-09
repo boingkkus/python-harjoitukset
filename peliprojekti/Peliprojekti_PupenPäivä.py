@@ -1,11 +1,12 @@
 class Huone():
-    def __init__(self, nimi: str):
-        self.nimi = self.huoneet
-        self.esineet = ['papana']
+    def __init__(self, huoneen_nimi, esineet = 'papana'):
+        self.huoneen_nimi = huoneen_nimi 
+        self.esineet = esineet
+        huoneen_nimi = self.huoneet
 
     def pudota_esine_huoneeseen(self, esine):
         self.esineet.append(esine)
-    #tavallaan näitä ei tarvii, koska papanoiden määrä on loputon. mut idk ei ainakaan tota^ alempi on ihan hyvä
+    #tavallaan näitä ei tarvii, koska papanoiden määrä lattioilla on loputon. 
     def kerää_esine_huoneesta(self, esine):
          if esine in self.esineet:
               self.esineet.remove(esine)
@@ -93,6 +94,8 @@ def tallenna(Pelaaja):
 nimi = input("Mikä on nimesi?: ")
 ikä = int(input("Mikä on ikäsi?: "))
 
+pelaaja = Pelaaja({nimi}, {ikä}) 
+
 #pääsilmukka, pelin päärakenne
 if ikä >= 12 :
     print("Hei,", nimi, ikä,"v." )
@@ -136,16 +139,15 @@ if ikä >= 12 :
 
             if vastaus == "y":
                 print("'Ehkä tämä voi tulla hyödylliseksi etsiessäni Myytä.'\n")
-                Pelaaja.kerää_esine #tää myös
-                #esine 'papana' lisättiin pussukkaan tms ?
+                pelaaja.kerää_esine()
 
             if vastaus == "n":
                 print("'Hmm. Ehkä papana on parempi jättää siihen. Äiti pitää niistä tuossa kovasti.'\n")
 
         if komento == "katso pussukkaan":
             print("Katsotaan mitä pussukasta löytyy: \n")
-            #for p in Pelaaja.luettele_esine('self'):
-            #    print("- " + p)
+            for p in pelaaja.luettele_esine:
+                print("- " + p)
 
         if komento == "poistu makuuhuoneesta":
             print("Suuntaat makuuhuoneen ovesta ulos uutta maailmaa kohti.\n") 
